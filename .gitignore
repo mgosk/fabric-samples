@@ -9,3 +9,5 @@
 /config
 .DS_Store
 .project
+fabric-samples.iml
+.idea
