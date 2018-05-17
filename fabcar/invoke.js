@@ -105,7 +105,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 		let event_hub = fabric_client.newEventHub();
 		event_hub.setPeerAddr('grpc://localhost:7053');
 
-		// using resolve the promise so that result status may be processed
+		// using resolve the promise so that res	ult status may be processed
 		// under the then clause rather than having the catch clause process
 		// the status
 		let txPromise = new Promise((resolve, reject) => {
