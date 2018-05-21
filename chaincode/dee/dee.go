@@ -37,7 +37,13 @@ func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) peer.Response 
 }
 
 func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) peer.Response {
-	//function, args := APIstub.GetFunctionAndParameters()
+	function, args := APIstub.GetFunctionAndParameters()
+	fmt.Println("invoke is running: " + function)
+
+	if function == "submitSimpleOrder" {
+		return s.submitSimpleOrder(APIstub, args)
+	}
+
 	//TODO implement body
 	return shim.Error("Invalid Smart Contract function name.")
 }
